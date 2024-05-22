@@ -1,3 +1,18 @@
+nnoremap q <c-v>
+set showcmd
+set clipboard=unnamedplus
+set backspace=indent,eol,start
+set hidden
+syntax on
+""set ts=4 softtabstop=0 expandtab sw=4 smarttab
+set ts=2 softtabstop=0 expandtab sw=2 smarttab
+highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
+set wrap
+set breakindent
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+highlight ColorColumn ctermbg=lightgray
+""switch tabs by using Tab keys
+"map <Tab> inerfers with CTRL-I: jump forward
 map <Tab> gt
 map <S-Tab> gT
 "don't show banner in vim file explorer
@@ -7,19 +22,51 @@ set cc=100
 "set color of column guideline    
 highlight ColorColumn ctermbg=254 
 set history=1000
+"ignore case in search by default
+set ignorecase
+"make search results highlighted
+set hlsearch 
+"highlight while searching
+set incsearch 
+"Clear highlighting on escape in normal mode
+" nnoremap <esc> :noh<return><esc> 
+"Clear highlighting on escape in normal mode
+" nnoremap <esc>^[ <esc>^[ 
+"Make wildmenu behave like similar to Bash completion.
+set wildmode=list:longest 
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*.tar,*.gz
+"disable swapfile creation
+set noswapfile 
+"maximum of tabs
+set tabpagemax=100
+"set gnome terminal title to currently edited file
+set title
+set titlestring=vim:\ %t
 "set max text width
 set textwidth=100
+set formatoptions-=t
+" DEACTIVATED, because it creates a delay with %s (and also visual noise)
+" use perl-y regex (probably not needed, because it works without it too)
+" nnoremap / /\v
+" cnoremap %s/ %s/\v
+" show gutter, mainly for ALE functionality
 set signcolumn=yes
 " change color of signcolumn (gutter)
 highlight SignColumn ctermbg=lightgrey
 " disable '~' symbols
 set fillchars=eob:\ 
+" set highlight color
+hi Visual cterm=none ctermbg=153 ctermfg=black 
+" Spell-check Markdown files and Git Commit Messages
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+hi SpellBad ctermbg=lightred "gentle yellow: 227
 " tabnew shortcut
 ca tn tabnew .
 
+" ------ plugins
 
 call plug#begin()
-
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
 "   - Vim (Windows): '~/vimfiles/plugged'
@@ -63,6 +110,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 Plug 'MattesGroeger/vim-bookmarks'
 
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
 
