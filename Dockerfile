@@ -10,8 +10,8 @@ RUN apt install -y black
 RUN apt install -y python3-pip
 RUN pip3 install --break-system-packages ruff
 RUN apt install -y shellcheck
-ENV TERM=xterm-256color
 COPY ./vimrc /root/.vimrc
 RUN vim +'PlugInstall --sync' +qa
+ENV TERM=xterm-256color
 WORKDIR /home
 CMD ["vim", "."]
