@@ -9,5 +9,6 @@ RUN vim +'PlugInstall --sync' +qa
 RUN apt install -y jq
 RUN apt install -y libxml2-utils
 RUN apt install -y black
+ENV TERM=xterm-256color
 WORKDIR /home
 CMD ["vim", "."]
