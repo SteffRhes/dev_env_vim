@@ -7,11 +7,35 @@ The Dockerfile concerns the debian based image setup and several linter dependen
 
 The build and run bash scripts assume podman, but docker works equally fine.
 
-The run call can be made flexible with an alias in .bashrc, e.g. `alias
-v=/path/to/dev_env_vim_run.sh`.
-
-Parameters are passed directly into the container, e.g. `-p file1 file2`.
-
 A caveat is that only the current folder (and hence its subfolders) is mounted into the container, 
 so opening a file from another parent folder is not possible.
 
+### how to use
+
+tested only on linux.
+
+first run the build script in this folder:
+```
+./dev_env_vim_build.sh
+```
+After that, a local image `dev_env_vim` was created, run this interactively with the script
+```
+./dev_env_vim_run.sh
+```
+
+Parameters can be passed directly to vim, e.g. this would open two files in two tabs:
+```
+./dev_env_vim_run.sh -p file1 file2
+```
+
+The run script could be made runnable anywhere with an alias added to .bashrc like so:
+```
+alias vim=/path/to/dev_env_vim_run.sh
+```
+
+Or wrap the podman call into a function in .bashrc:
+```
+vim() {
+    podman run --rm -it -v .:/mount:z dev_env_vim vim "$@"
+}
+```
