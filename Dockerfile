@@ -13,4 +13,7 @@ RUN apt install -y shellcheck
 COPY ./vimrc /root/.vimrc
 RUN vim +'PlugInstall --sync' +qa
 ENV TERM=xterm-256color
+ENV LANG=C.UTF-8
+ENV LANGUAGE=C.UTF-8
+ENV LC_ALL=C.UTF-8
 WORKDIR /home
