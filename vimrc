@@ -4,10 +4,8 @@ set clipboard=unnamedplus
 set backspace=indent,eol,start
 set hidden
 syntax on
-
 "set ts=4 softtabstop=0 expandtab sw=4 smarttab
 set ts=2 softtabstop=0 expandtab sw=2 smarttab
-
 highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
 set wrap
 set breakindent
