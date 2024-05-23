@@ -14,4 +14,3 @@ COPY ./vimrc /root/.vimrc
 RUN vim +'PlugInstall --sync' +qa
 ENV TERM=xterm-256color
 WORKDIR /home
-CMD ["vim", "."]
