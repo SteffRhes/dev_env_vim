@@ -86,6 +86,14 @@ hi SpellBad ctermbg=lightred "gentle yellow: 227
 " tabnew shortcut
 ca tn tabnew .
 
+" move half page with page up and down, in all modes
+nnoremap <PageUp> <C-U>zz
+vnoremap <PageUp> <C-U>zz
+inoremap <PageUp> <Esc><C-U>zzi
+nnoremap <PageDown> <C-D>zz
+vnoremap <PageDown> <C-D>zz
+inoremap <PageDown> <Esc><C-D>zzi
+
 
 " ----------------------- plugins
 
