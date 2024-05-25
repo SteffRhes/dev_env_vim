@@ -4,4 +4,6 @@
   the run command that automatically sets correct permissions.
 - make run script to execute (and potentially build) only local image.
 - consider a permanent mount for files like spelling dictionaries, bookmarks, history
+- add ctags integration
+- experiment with various LSP and ale integration
 
