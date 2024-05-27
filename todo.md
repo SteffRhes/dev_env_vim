@@ -6,4 +6,5 @@
 - consider a permanent mount for files like spelling dictionaries, bookmarks, history
 - add ctags integration
 - experiment with various LSP and ale integration
+- add ctrl-backspace instead of ctrl-w
 
