@@ -94,6 +94,10 @@ nnoremap <PageDown> <C-D>zz
 vnoremap <PageDown> <C-D>zz
 inoremap <PageDown> <Esc><C-D>zzi
 
+" delete word with ctrl-backspace
+inoremap <C-H> <C-W>
+cnoremap <C-H> <C-W>
+
 
 " ----------------------- plugins
 
