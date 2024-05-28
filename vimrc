@@ -145,5 +145,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+Plug 'preservim/tagbar'
+
 call plug#end()
 
