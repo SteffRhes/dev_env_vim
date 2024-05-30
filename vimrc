@@ -98,6 +98,12 @@ inoremap <PageDown> <Esc><C-D>zzi
 inoremap <C-H> <C-W>
 cnoremap <C-H> <C-W>
 
+" Remap ctrl+w+cursor to ctrl+cursor in normal mode
+nnoremap <C-Right> <C-w><Right>
+nnoremap <C-Left> <C-w><Left>
+nnoremap <C-Up> <C-w><Up>
+nnoremap <C-Down> <C-w><Down>
+
 
 " ----------------------- plugins
 
