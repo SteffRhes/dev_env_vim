@@ -146,6 +146,8 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'preservim/tagbar'
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_width = 80
 
 call plug#end()
 
