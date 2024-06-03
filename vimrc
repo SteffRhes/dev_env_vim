@@ -152,6 +152,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'preservim/tagbar'
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_width = 80
+let g:tagbar_sort = 0
 
 call plug#end()
 
