@@ -103,6 +103,10 @@ nnoremap <S-Right> <C-w><Right>
 nnoremap <S-Left> <C-w><Left>
 nnoremap <S-Up> <C-w><Up>
 nnoremap <S-Down> <C-w><Down>
+vnoremap <S-Right> <C-w><Right>
+vnoremap <S-Left> <C-w><Left>
+vnoremap <S-Up> <C-w><Up>
+vnoremap <S-Down> <C-w><Down>
 
 
 " ----------------------- plugins
