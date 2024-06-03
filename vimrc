@@ -99,10 +99,10 @@ inoremap <C-H> <C-W>
 cnoremap <C-H> <C-W>
 
 " Remap ctrl+w+cursor to ctrl+cursor in normal mode
-nnoremap <C-Right> <C-w><Right>
-nnoremap <C-Left> <C-w><Left>
-nnoremap <C-Up> <C-w><Up>
-nnoremap <C-Down> <C-w><Down>
+nnoremap <S-Right> <C-w><Right>
+nnoremap <S-Left> <C-w><Left>
+nnoremap <S-Up> <C-w><Up>
+nnoremap <S-Down> <C-w><Down>
 
 
 " ----------------------- plugins
