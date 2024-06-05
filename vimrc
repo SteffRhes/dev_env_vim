@@ -107,6 +107,10 @@ vnoremap <S-Right> <C-w><Right>
 vnoremap <S-Left> <C-w><Left>
 vnoremap <S-Up> <C-w><Up>
 vnoremap <S-Down> <C-w><Down>
+inoremap <S-Right> <Esc><C-w><Right>i
+inoremap <S-Left> <Esc><C-w><Left>i
+inoremap <S-Up> <Esc><C-w><Up>i
+inoremap <S-Down> <Esc><C-w><Down>i
 
 
 " ----------------------- plugins
