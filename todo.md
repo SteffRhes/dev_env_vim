@@ -6,5 +6,4 @@
 - make run script to execute (and potentially build) only local image.
 - consider a permanent mount for files like spelling dictionaries, bookmarks, history
 - experiment with various LSP and ale integration
-- add ctrl-backspace instead of ctrl-w
 
