@@ -162,3 +162,9 @@ let g:tagbar_sort = 0
 
 call plug#end()
 
+" add markdown handling after plugin section as some of it interferes with it otherwise
+augroup markdown_syntax_off
+    autocmd!
+    autocmd BufRead,BufNewFile *.md setlocal syntax=OFF nospell
+augroup END
+
