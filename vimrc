@@ -156,7 +156,7 @@ Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 Plug 'preservim/tagbar'
-ca tb TagbarOpenAutoClose
+nnoremap l :TagbarOpenAutoClose<CR>
 let g:tagbar_width = 80
 let g:tagbar_sort = 0
 
