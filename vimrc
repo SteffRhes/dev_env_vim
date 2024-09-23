@@ -157,7 +157,8 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 Plug 'preservim/tagbar'
 nnoremap l :TagbarOpenAutoClose<CR>
-let g:tagbar_width = 80
+let g:tagbar_width = 60
+let g:tagbar_left = 1
 let g:tagbar_sort = 0
 
 call plug#end()
