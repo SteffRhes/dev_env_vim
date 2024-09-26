@@ -86,14 +86,6 @@ hi SpellBad ctermbg=lightred "gentle yellow: 227
 " tabnew shortcut
 ca tn tabnew .
 
-" move half page with page up and down, in all modes
-nnoremap <PageUp> <C-Y>
-vnoremap <PageUp> <C-Y>
-inoremap <PageUp> <C-Y>
-nnoremap <PageDown> <C-E>
-vnoremap <PageDown> <C-E>
-inoremap <PageDown> <C-E>
-
 " delete word with ctrl-backspace
 inoremap <C-H> <C-W>
 cnoremap <C-H> <C-W>
