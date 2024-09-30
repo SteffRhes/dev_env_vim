@@ -104,8 +104,15 @@ inoremap <S-Left> <Esc><C-w><Left>i
 inoremap <S-Up> <Esc><C-w><Up>i
 inoremap <S-Down> <Esc><C-w><Down>i
 
-" Autosave when leaving insert mode or switching buffers
+" autosave when leaving insert mode or switching buffers
 autocmd InsertLeave,TextChanged * silent! wall
+
+" map ctrl+down and ctrl-up to Ctrl+e and Ctrl+y to scroll down or up
+nnoremap <C-Down> <C-e>h
+inoremap <C-Down> <C-o><C-e>
+nnoremap <C-Up> <C-y>
+inoremap <C-Up> <C-o><C-y>
+
 
 " ----------------------- plugins
 
