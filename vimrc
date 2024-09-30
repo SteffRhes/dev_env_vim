@@ -104,6 +104,8 @@ inoremap <S-Left> <Esc><C-w><Left>i
 inoremap <S-Up> <Esc><C-w><Up>i
 inoremap <S-Down> <Esc><C-w><Down>i
 
+" Autosave when leaving insert mode or switching buffers
+autocmd InsertLeave,TextChanged * silent! wall
 
 " ----------------------- plugins
 
