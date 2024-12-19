@@ -114,6 +114,34 @@ nnoremap <C-Up> <C-y>
 inoremap <C-Up> <C-o><C-y>
 
 
+" Map s in Visual mode to append the highlighted text to the current search
+xnoremap s :<C-u>call AppendToSearch()<CR>
+
+" Map S to delete the current search pattern
+nnoremap S :let @/ = ''<CR>
+
+" Function to append the highlighted text to the current search
+function! AppendToSearch()
+  " Get the visually selected text
+  let l:selected_text = getline("'<")[col("'<")-1 : col("'>")-1]
+
+  " Escape the selected text for search
+  let l:escaped_text = escape(l:selected_text, '\\/')
+
+  " Check if there's an existing search pattern
+  if @/ !=# ''
+    " Append the new text to the current search pattern with \| for 'OR'
+    let @/ = @/ . '\|' . l:escaped_text
+  else
+    " Start a new search pattern
+    let @/ = '\V' . l:escaped_text
+  endif
+
+  " Perform the search
+  normal! n
+endfunction
+
+
 " ----------------------- plugins
 
 call plug#begin()
