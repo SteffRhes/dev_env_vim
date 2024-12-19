@@ -84,7 +84,7 @@ autocmd FileType gitcommit setlocal spell
 hi SpellBad ctermbg=lightred "gentle yellow: 227
 
 " tabnew shortcut
-ca tn tabnew .
+nnoremap t :tabnew .<CR>
 
 " delete word with ctrl-backspace
 inoremap <C-H> <C-W>
