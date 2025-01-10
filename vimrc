@@ -33,6 +33,7 @@ set ignorecase
 
 " make search results highlighted
 set hlsearch 
+highlight Search ctermbg=119
 
 " highlight while searching
 set incsearch 
