@@ -7,7 +7,7 @@ The Dockerfile concerns the debian based image setup and several linter dependen
 
 The build and run bash scripts assume podman, but docker works equally fine.
 
-A ~~caveat~~ trade-off is that only the current folder (and hence its subfolders) is mounted into the container, 
+A ~~caveat~~ feature is that only the current folder (and hence its subfolders) is mounted into the container, 
 so opening a file from another parent folder is not possible.
 
 ### how to use
