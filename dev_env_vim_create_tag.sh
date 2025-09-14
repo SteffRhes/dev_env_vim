@@ -1,4 +1,6 @@
 #!/bin/bash
 
-echo dev_env_vim:latest dev_env_vim:"$(date -I)"
+tag_base="steffrhes/dev_env_vim"
+
+echo "$tag_base":latest "$tag_base":"$(date -I)"
 
