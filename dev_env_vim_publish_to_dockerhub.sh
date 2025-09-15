@@ -2,10 +2,9 @@
 
 docker login
 
-read -r tag_latest tag_date <<< "$(./dev_env_vim_create_tag.sh)"
-
-echo "$tag_date"
-echo "$tag_latest"
+tag_base="steffrhes/dev_env_vim"
+tag_latest="$tag_base":latest
+tag_date="$tag_base":"$(date -I)"
 
 docker push "$tag_date"
 docker push "$tag_latest"
