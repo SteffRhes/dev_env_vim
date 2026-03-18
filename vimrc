@@ -141,6 +141,12 @@ endfunction
 set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType html,xml inoremap <buffer> </ </<C-X><C-O>
 
+" move soft-wrapped lines by one
+noremap <Up> gk
+noremap <Down> gj
+inoremap <Up> <C-o>gk
+inoremap <Down> <C-o>gj
+
 
 " ----------------------- plugins
 
