@@ -137,6 +137,10 @@ function! AppendToSearch()
   normal! n
 endfunction
 
+" xml autocomplete
+set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType html,xml inoremap <buffer> </ </<C-X><C-O>
+
 
 " ----------------------- plugins
 
