@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#oci_engine="podman"
-oci_engine="docker"
+oci_engine="podman"
+#oci_engine="docker"
 
 tag_base="steffrhes/dev_env_vim"
 tag_latest="$tag_base":latest
