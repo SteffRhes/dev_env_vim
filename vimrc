@@ -1,19 +1,24 @@
-nnoremap q <c-v>
-set showcmd
+
+" share clipboard
 set clipboard=unnamedplus
+
+" make backspace behave naturally
 set backspace=indent,eol,start
+
+" switching to another buffer without saving or discarding
 set hidden
+
+" syntax
 syntax on
-"set ts=4 softtabstop=0 expandtab sw=4 smarttab
+
+" indendation
 set ts=2 softtabstop=0 expandtab sw=2 smarttab
-highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
+
+" line wrapping
 set wrap
 set breakindent
-inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
-highlight ColorColumn ctermbg=lightgray
 
 " switch tabs by using Tab keys
-"map <Tab> interfers with CTRL-I: jump forward
 map <Tab> gt
 map <S-Tab> gT
 
@@ -22,10 +27,9 @@ let g:netrw_banner = 0
 
 " set column guideline
 set cc=100 
-
-" set color of column guideline    
 highlight ColorColumn ctermbg=254 
 
+" command and search history
 set history=1000
 
 " ignore case in search by default
@@ -34,14 +38,7 @@ set ignorecase
 " make search results highlighted
 set hlsearch 
 highlight Search ctermbg=119
-
-" highlight while searching
 set incsearch 
-
-" Clear highlighting on escape in normal mode
-" nnoremap <esc> :noh<return><esc> 
-" Clear highlighting on escape in normal mode
-" nnoremap <esc>^[ <esc>^[ 
 
 " Make wildmenu behave like similar to Bash completion.
 set wildmode=list:longest 
@@ -62,10 +59,7 @@ set textwidth=100
 set formatoptions-=t
 
 " change regex dialect
-" DEACTIVATED, because it creates a delay with %s (and also visual noise)
-" use perl-y regex (probably not needed, because it works without it too)
-" nnoremap / /\v
-" cnoremap %s/ %s/\v
+nnoremap / /\v
 
 " show gutter, mainly for ALE functionality
 set signcolumn=yes
@@ -91,7 +85,7 @@ nnoremap t :tabnew .<CR>
 inoremap <C-H> <C-W>
 cnoremap <C-H> <C-W>
 
-" Remap ctrl+w+cursor to ctrl+cursor in normal mode
+" Remap ctrl+w+cursor to ctrl+cursor
 nnoremap <S-Right> <C-w><Right>
 nnoremap <S-Left> <C-w><Left>
 nnoremap <S-Up> <C-w><Up>
@@ -109,10 +103,11 @@ inoremap <S-Down> <Esc><C-w><Down>i
 autocmd InsertLeave,TextChanged * silent! wall
 
 " map ctrl+down and ctrl-up to Ctrl+e and Ctrl+y to scroll down or up
-nnoremap <C-Down> <C-e>h
+nnoremap <C-Down> <C-e>
 inoremap <C-Down> <C-o><C-e>
 nnoremap <C-Up> <C-y>
 inoremap <C-Up> <C-o><C-y>
+
 
 " highlight function
 " Map s in Visual mode to append the highlighted text to the current search
@@ -140,12 +135,6 @@ endfunction
 " xml autocomplete
 set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType html,xml inoremap <buffer> </ </<C-X><C-O>
-
-" move soft-wrapped lines by one
-noremap <Up> gk
-noremap <Down> gj
-inoremap <Up> <C-o>gk
-inoremap <Down> <C-o>gj
 
 " always show fold column
 set foldcolumn=1
