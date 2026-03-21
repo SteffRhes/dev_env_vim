@@ -3,10 +3,11 @@
 
 My containerized vim setup, for OS hygiene, portability and reproducibility.
 
-The Dockerfile defines the debian based image setup and a few third-party additions, such as linters and plugins.
+The Dockerfile defines the debian based image setup and a few third-party additions, such as linters
+and plugins.
 
-A ~~caveat~~ security feature is that only the current folder is mounted into the container, so opening a file 
-from a parent folder is not possible.
+A ~~caveat~~ security feature is that only the current folder is mounted into the container, so
+opening a file from a parent folder is not possible.
 
 ### use docker hub image
 
