@@ -115,14 +115,18 @@ function! AppendToSearch()
   " Check if there's an existing search pattern
   if @/ !=# ''
     " Append the new text to the current search pattern with \| for 'OR'
-    let @/ = @/ . '\|' . l:escaped_text
+    let @/ = @/ . '\|\V' . l:escaped_text
   else
     " Start a new search pattern
     let @/ = '\V' . l:escaped_text
   endif
+  call histadd('/', @/)
   " Perform the search
   normal! n
 endfunction
+
+" replacment function
+vnoremap r y:%s/<C-r>"//gc<left><left>
 
 " xml autocomplete
 set omnifunc=xmlcomplete#CompleteTags
