@@ -137,6 +137,106 @@ autocmd FileType html,xml inoremap <buffer> </ </<C-X><C-O>
 set foldcolumn=1
 
 
+" ----------------------- marks function
+
+function! NextMark()
+  let l:current_line = line('.')
+  let l:marks = 'abcdefghijklmnopqrstuvwxyz'
+  let l:best_line = -1
+  let l:best_mark = ''
+  for l:m in split(l:marks, '\zs')
+    let l:pos = getpos("'" . l:m)
+    if l:pos[1] > l:current_line
+      if l:best_line == -1 || l:pos[1] < l:best_line
+        let l:best_line = l:pos[1]
+        let l:best_mark = l:m
+      endif
+    endif
+  endfor
+  if l:best_mark == ''
+    for l:m in split(l:marks, '\zs')
+      let l:pos = getpos("'" . l:m)
+      if l:pos[1] > 0
+        if l:best_line == -1 || l:pos[1] < l:best_line
+          let l:best_line = l:pos[1]
+          let l:best_mark = l:m
+        endif
+      endif
+    endfor
+  endif
+  if l:best_mark != ''
+    execute "normal! '" . l:best_mark
+  endif
+endfunction
+
+function! PreviousMark()
+  let l:current_line = line('.')
+  let l:marks = 'abcdefghijklmnopqrstuvwxyz'
+  let l:best_line = -1
+  let l:best_mark = ''
+  for l:m in split(l:marks, '\zs')
+    let l:pos = getpos("'" . l:m)
+    if l:pos[1] > 0 && l:pos[1] < l:current_line
+      if l:pos[1] > l:best_line
+        let l:best_line = l:pos[1]
+        let l:best_mark = l:m
+      endif
+    endif
+  endfor
+  if l:best_mark == ''
+    for l:m in split(l:marks, '\zs')
+      let l:pos = getpos("'" . l:m)
+      if l:pos[1] > 0
+        if l:pos[1] > l:best_line
+          let l:best_line = l:pos[1]
+          let l:best_mark = l:m
+        endif
+      endif
+    endfor
+  endif
+  if l:best_mark != ''
+    execute "normal! '" . l:best_mark
+  endif
+endfunction
+
+function! AddMark()
+  let l:marks = 'abcdefghijklmnopqrstuvwxyz'
+  let l:next_mark = ''
+  for l:m in split(l:marks, '\zs')
+    let l:pos = getpos("'" . l:m)
+    if l:pos[1] == 0
+      let l:next_mark = l:m
+      break
+    endif
+  endfor
+  if l:next_mark == ''
+    echohl ErrorMsg | echo "No more marks available (a-z exhausted)" | echohl None
+    return
+  endif
+  execute "normal! m" . l:next_mark
+  echo "Mark '" . l:next_mark . "' set on line " . line('.')
+endfunction
+
+function! RemoveMark()
+  let l:current_line = line('.')
+  let l:marks = 'abcdefghijklmnopqrstuvwxyz'
+  for l:m in split(l:marks, '\zs')
+    let l:pos = getpos("'" . l:m)
+    if l:pos[1] == l:current_line
+      execute "delmarks " . l:m
+      echo "Mark '" . l:m . "' removed from line " . l:current_line
+      return
+    endif
+  endfor
+  echo "No mark on current line"
+endfunction
+
+nnoremap mm :call NextMark()<CR>
+nnoremap mn :call PreviousMark()<CR>
+nnoremap ma :call AddMark()<CR>
+nnoremap md :call RemoveMark()<CR>
+
+
 " ----------------------- plugins
 
 call plug#begin()
