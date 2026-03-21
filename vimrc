@@ -102,6 +102,16 @@ inoremap <C-Down> <C-o><C-e>
 nnoremap <C-Up> <C-y>
 inoremap <C-Up> <C-o><C-y>
 
+" xml autocomplete
+set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType html,xml inoremap <buffer> </ </<C-X><C-O>
+
+" always show fold column
+set foldcolumn=1
+
+
+" ----------------------- highlight and replacement shortcuts and function
+
 " highlight function
 " Map s in Visual mode to append the highlighted text to the current search
 xnoremap s :<C-u>call AppendToSearch()<CR>
@@ -126,15 +136,8 @@ function! AppendToSearch()
   normal! n
 endfunction
 
-" replacment function
+" replacment shortcut
 vnoremap r y:%s/<C-r>"//gc<left><left>
-
-" xml autocomplete
-set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType html,xml inoremap <buffer> </ </<C-X><C-O>
-
-" always show fold column
-set foldcolumn=1
 
 
 " ----------------------- marks function
