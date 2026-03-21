@@ -147,6 +147,9 @@ noremap <Down> gj
 inoremap <Up> <C-o>gk
 inoremap <Down> <C-o>gj
 
+" always show fold column
+set foldcolumn=1
+
 
 " ----------------------- plugins
 
