@@ -151,7 +151,7 @@ let g:airline_section_x=''
 let g:airline_section_b=''
 
 " show full path
-"let g:airline_section_c='%F'
+let g:airline_section_c='%F'
 
 Plug 'dense-analysis/ale'
 
