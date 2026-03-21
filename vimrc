@@ -73,7 +73,8 @@ hi Visual cterm=none ctermbg=153 ctermfg=black
 " Spell-check Markdown files and Git Commit Messages
 autocmd FileType markdown setlocal spell
 autocmd FileType gitcommit setlocal spell
-hi SpellBad ctermbg=lightred "gentle yellow: 227
+hi SpellBad ctermbg=224
+hi link markdownError Normal
 
 " tabnew shortcut
 nnoremap t :tabnew .<CR>
@@ -179,16 +180,10 @@ Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 Plug 'preservim/tagbar'
-nnoremap l :TagbarOpenAutoClose<CR>
+nnoremap q :TagbarOpenAutoClose<CR>
 let g:tagbar_width = 60
 let g:tagbar_left = 1
 let g:tagbar_sort = 0
 
 call plug#end()
-
-" add markdown handling after plugin section as some of it interferes with it otherwise
-augroup markdown_syntax_off
-    autocmd!
-    autocmd BufRead,BufNewFile *.md setlocal syntax=OFF nospell
-augroup END
 
