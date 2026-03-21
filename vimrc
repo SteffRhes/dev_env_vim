@@ -115,6 +115,16 @@ noremap <Down> gj
 inoremap <expr> <Up> pumvisible() ? "\<C-p>" : "\<C-o>gk"
 inoremap <expr> <Down> pumvisible() ? "\<C-n>" : "\<C-o>gj"
 
+" resize window splits
+noremap <M-Left> <C-w><
+noremap <M-Right> <C-w>>
+noremap <M-Up> <C-w>-
+noremap <M-Down> <C-w>+
+inoremap <M-Left> <C-o><C-w><
+inoremap <M-Right> <C-o><C-w>>
+inoremap <M-Up> <C-o><C-w>-
+inoremap <M-Down> <C-o><C-w>+
+
 
 " ----------------------- highlight and replacement shortcuts and function
 
