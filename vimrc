@@ -58,9 +58,6 @@ set titlestring=vim:\ %t
 set textwidth=100
 set formatoptions-=t
 
-" change regex dialect
-nnoremap / /\v
-
 " show gutter, mainly for ALE functionality
 set signcolumn=yes
 
@@ -90,10 +87,6 @@ nnoremap <S-Right> <C-w><Right>
 nnoremap <S-Left> <C-w><Left>
 nnoremap <S-Up> <C-w><Up>
 nnoremap <S-Down> <C-w><Down>
-vnoremap <S-Right> <C-w><Right>
-vnoremap <S-Left> <C-w><Left>
-vnoremap <S-Up> <C-w><Up>
-vnoremap <S-Down> <C-w><Down>
 inoremap <S-Right> <Esc><C-w><Right>i
 inoremap <S-Left> <Esc><C-w><Left>i
 inoremap <S-Up> <Esc><C-w><Up>i
@@ -107,7 +100,6 @@ nnoremap <C-Down> <C-e>
 inoremap <C-Down> <C-o><C-e>
 nnoremap <C-Up> <C-y>
 inoremap <C-Up> <C-o><C-y>
-
 
 " highlight function
 " Map s in Visual mode to append the highlighted text to the current search
