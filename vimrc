@@ -109,6 +109,12 @@ autocmd FileType html,xml inoremap <buffer> </ </<C-X><C-O>
 " always show fold column
 set foldcolumn=1
 
+" move soft-wrapped lines by one
+noremap <Up> gk
+noremap <Down> gj
+inoremap <expr> <Up> pumvisible() ? "\<C-p>" : "\<C-o>gk"
+inoremap <expr> <Down> pumvisible() ? "\<C-n>" : "\<C-o>gj"
+
 
 " ----------------------- highlight and replacement shortcuts and function
 
