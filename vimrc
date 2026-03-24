@@ -128,6 +128,9 @@ inoremap <M-Down> <C-o><C-w>+
 " automatically change to dir of file
 set autochdir
 
+" select popup menu entry with enter
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
 " ----------------------- highlight and replacement shortcuts and function
 
 " highlight function
