@@ -125,6 +125,8 @@ inoremap <M-Right> <C-o><C-w>>
 inoremap <M-Up> <C-o><C-w>-
 inoremap <M-Down> <C-o><C-w>+
 
+" automatically change to dir of file
+set autochdir
 
 " ----------------------- highlight and replacement shortcuts and function
 
@@ -251,7 +253,7 @@ function! RemoveMark()
 endfunction
 
 nnoremap mm :call NextMark()<CR>
-nnoremap mn :call PreviousMark()<CR>
+nnoremap M :call PreviousMark()<CR>
 nnoremap ma :call AddMark()<CR>
 nnoremap md :call RemoveMark()<CR>
 
