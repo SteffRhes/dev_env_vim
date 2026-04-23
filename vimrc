@@ -70,9 +70,7 @@ set fillchars=eob:\
 " set highlight color
 hi Visual cterm=none ctermbg=153 ctermfg=black 
 
-" Spell-check Markdown files and Git Commit Messages
-autocmd FileType markdown setlocal spell
-autocmd FileType gitcommit setlocal spell
+" Spell settings
 hi SpellBad ctermbg=224
 hi link markdownError Normal
 
