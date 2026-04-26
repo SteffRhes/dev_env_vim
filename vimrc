@@ -319,6 +319,7 @@ nmap t <Plug>(GitGutterNextHunk)
 nmap T <Plug>(GitGutterPrevHunk)
 nmap ta <Plug>(GitGutterStageHunk)
 nmap tu <Plug>(GitGutterUndoHunk)
+nmap tp <Plug>(GitGutterPreviewHunk)
 
 call plug#end()
 
