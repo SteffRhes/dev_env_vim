@@ -129,6 +129,10 @@ set autochdir
 " select popup menu entry with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
+" load external changes automatically
+set autoread
+autocmd FocusGained,BufEnter * checktime
+
 " ----------------------- highlight and replacement shortcuts and function
 
 " highlight function
