@@ -315,6 +315,10 @@ let g:tagbar_left = 1
 let g:tagbar_sort = 0
 
 Plug 'airblade/vim-gitgutter'
+nmap t <Plug>(GitGutterNextHunk)
+nmap T <Plug>(GitGutterPrevHunk)
+nmap ta <Plug>(GitGutterStageHunk)
+nmap tu <Plug>(GitGutterUndoHunk)
 
 call plug#end()
 
