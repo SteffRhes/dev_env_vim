@@ -133,6 +133,9 @@ inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 set autoread
 autocmd FocusGained,BufEnter * checktime
 
+" speed up updatetime
+set updatetime=100
+
 " ----------------------- highlight and replacement shortcuts and function
 
 " highlight function
@@ -310,6 +313,8 @@ nnoremap q :TagbarOpenAutoClose<CR>
 let g:tagbar_width = 60
 let g:tagbar_left = 1
 let g:tagbar_sort = 0
+
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
