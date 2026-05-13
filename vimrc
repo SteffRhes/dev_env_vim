@@ -321,5 +321,9 @@ nmap gha <Plug>(GitGutterStageHunk)
 nmap ghu <Plug>(GitGutterUndoHunk)
 nmap ghv <Plug>(GitGutterPreviewHunk)
 
+Plug 'andymass/vim-matchup'
+let g:matchup_matchparen_offscreen = {}
+hi MatchParen ctermbg=153
+
 call plug#end()
 
