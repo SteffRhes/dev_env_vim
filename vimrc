@@ -323,7 +323,7 @@ nmap ghv <Plug>(GitGutterPreviewHunk)
 
 Plug 'andymass/vim-matchup'
 let g:matchup_matchparen_offscreen = {}
-hi MatchParen ctermbg=153
+hi MatchParen ctermbg=151
 
 call plug#end()
 
