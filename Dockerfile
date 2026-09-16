@@ -43,5 +43,7 @@ ENV LC_ALL=C.UTF-8
 # default folder
 WORKDIR /v
 
+RUN apt install shfmt
+
 ENTRYPOINT ["vim"]
 

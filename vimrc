@@ -286,8 +286,13 @@ let g:ale_fixers = {
 \   'json': ['jq'],
 \   'xml': ['xmllint'],
 \   'python': ['black'],
+\   'sh': ['shfmt'],
+\}
+let g:ale_linters = {
+\   'sh': ['shellcheck'],
 \}
 let g:ale_python_black_options='--line-length=100'
+let g:ale_sh_shfmt_options='-i 2'
 let g:ale_completion_enabled = 1
 
 " disable virtual text insertion
