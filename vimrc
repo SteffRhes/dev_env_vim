@@ -301,7 +301,10 @@ let g:ale_virtualtext_prefix = ''
 let g:ale_virtualtext = 0
 
 " disable shellcheck's undefined var warning
-let g:ale_sh_shellcheck_options = '-e SC2154'
+let g:ale_sh_shellcheck_options = '-e SC2154 -e SC1091 -e SC2317 -e SC2164'
+
+" run ALELint whenever opening a new split
+autocmd WinEnter,BufWinEnter * ALELint
 
 Plug 'preservim/nerdcommenter'
 
